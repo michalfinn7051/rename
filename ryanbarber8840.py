@@ -61,7 +61,7 @@ def main():
                 extracted.append(files[x]['a']['n'])
             except:
                 pass
-        
+    extracted = extracted[::-1]    
     dump_txt = ["Telegram @OnlyShare0 - - ", "Telegram @OnlyShare0 - -", "Telegram @OnlyShare0 --", "Telegram @OnlyShare0 -", "Telegram @OnlyShare0", "@Newsociety70 Telegram Join Channel", "_@newsociety0 telegram Fsociety_TG Reddit_", "Fsociety_TG SubReddit Download Join", "@Nud3Cloud Telegram"]
     matches = [txt for txt in extracted if any(keyword in txt for keyword in dump_txt)]
     print(f"Total :- {len(matches)}")
