@@ -66,7 +66,7 @@ def main():
     matches = [txt for txt in extracted if any(keyword in txt for keyword in dump_txt)]
     print(f"Total :- {len(matches)}")
     time.sleep(1)
-    num_threads = 100
+    num_threads = 25
     files_per_thread = len(extracted) // num_threads
     threads = []
 
