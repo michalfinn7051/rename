@@ -7,14 +7,15 @@ successful_renames = 0
 def rename_files(mega, files_to_rename):
     global successful_renames
     for file_name in files_to_rename:
-        new_name = f"@nsfwpack0 Telegram {file_name}"
-        file = mega.find(file_name)
-        try:
-            mega.rename(file, new_name)
-            print(f"{file_name} --> {new_name}")
-            successful_renames += 1
-        except Exception as e:
-            print(f"Failed to rename {file_name}: {e}")  
+        if "@nsfwpack0" not in file_name:
+            new_name = f"@nsfwpack0 Telegram {file_name}"
+            file = mega.find(file_name)
+            try:
+                mega.rename(file, new_name)
+                print(f"{file_name} --> {new_name}")
+                successful_renames += 1
+            except Exception as e:
+                print(f"Failed to rename {file_name}: {e}")  
 
 def main():
     mega = Mega()
