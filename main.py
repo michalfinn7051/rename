@@ -19,7 +19,7 @@ def rename_files(mega, files_to_rename):
 
 def main():
     mega = Mega()
-    m = mega.login("elizabethsmith4269@fexpost.com", "Bot@7051")
+    m = mega.login("robertcarter1419@fexpost.com", "Bot@7051")
 
     files = m.get_files()
     extracted = []
