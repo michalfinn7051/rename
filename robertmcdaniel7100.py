@@ -7,8 +7,9 @@ successful_renames = 0
 def rename_files(mega, files_to_rename):
     global successful_renames
     for file_name in files_to_rename:
-        if "@nsfwpack0" not in file_name:
-            new_name = f"@nsfwpack0 Telegram {file_name}"
+        if ("@nsfwpack0" not in file_name) or ("@society0" in file_name):
+            new_name = file_name.replace("@society0 telegram channel ", "").replace("@society0 telegram channel", "")
+            new_name = f"@nsfwpack0 Telegram {new_name}"
             file = mega.find(file_name)
             try:
                 mega.rename(file, new_name)
@@ -19,18 +20,18 @@ def rename_files(mega, files_to_rename):
 
 def main():
     mega = Mega()
-    m = mega.login("elizabethsmith4269@fexpost.com", "Bot@7051")
+    m = mega.login("robertcarter1419@fexpost.com", "Bot@7051")
 
     files = m.get_files()
     extracted = []
 
     for x in files:
-        if files[x]:
+        if files[x]["t"] == 0:
             try:
                 extracted.append(files[x]['a']['n'])
             except:
                 pass
-    extracted = extracted[(len(extracted)//2):]
+        
     print(f"Total :- {len(extracted)}")
     time.sleep(1)
     num_threads = 50
