@@ -7,8 +7,8 @@ successful_renames = 0
 def rename_files(mega, files_to_rename):
     global successful_renames
     for file_name in files_to_rename:
-        if ("@nsfwpack0" not in file_name) or ("@Nud3Cloud" in file_name):
-            new_name = file_name.replace("@Nud3Cloud Telegram", "").replace("@Nud3Cloud2 Telegram", "")
+        if ("@nsfwpack0" not in file_name) or ("@society0" in file_name):
+            new_name = file_name.replace("@society0 telegram channel ", "").replace("@society0 telegram channel", "")
             new_name = f"@nsfwpack0 Telegram {new_name}"
             file = mega.find(file_name)
             try:
